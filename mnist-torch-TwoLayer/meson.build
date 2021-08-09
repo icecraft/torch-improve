@@ -9,7 +9,7 @@ protobuf_dep = cpp.find_library('protobuf', dirs: '/mnt/workspace/libtorch_lib')
 torch_cpu_dep = cpp.find_library('torch_cpu', dirs: '/mnt/workspace/libtorch_lib')
 
 deps = [torch_dep, torch_cpu_dep, c10_dep, protobuf_dep]
-link_flags = ['-lpthread', '-lunwind' ] 
+link_flags = ['-lpthread' ] 
 
 executable('mnist', 'mnist.cpp', include_directories: incdir, dependencies: deps, link_args: link_flags)
 
